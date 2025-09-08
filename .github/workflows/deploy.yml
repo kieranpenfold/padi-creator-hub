@@ -5,7 +5,6 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
-# Avoid overlapping deploys
 concurrency:
   group: "pages"
   cancel-in-progress: true
@@ -52,6 +51,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
 
   deploy:
     needs: build
